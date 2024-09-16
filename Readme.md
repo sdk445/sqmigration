@@ -1,17 +1,19 @@
--- INSTALL SEQUELIZE -CLI ::
-    npm install --save-dev sequelize-cli
+## Sequelize CLI Setup and Migrations
 
--- TO init the migration ::
-    npx sequelize-cli init
+To set up and manage Sequelize migrations, follow these steps:
 
--- TO create migration file  - MANUALLY WRITTEN ::
-    npx sequelize-cli migration:generate --name update-new-user
+```bash
+# Install sequelize-cli as a development dependency
+npm install --save-dev sequelize-cli
 
--- TO generate model - AUTOMATED MODEL CREATION ::
-    npx sequelize-cli model:generate --name new_user --attributes firstName:string,lastName:string,email:string,data:string,this:string
+# Initialize Sequelize for migrations
+npx sequelize-cli init
 
--- to commit the migration ::
-    npx sequelize-cli db:migrate
+# Create a migration file manually
+npx sequelize-cli migration:generate --name update-new-user
 
-# Dependency 
- "sequelize-cli": "^6.6.2"
+# Generate a model with specified attributes
+npx sequelize-cli model:generate --name new_user --attributes firstName:string,lastName:string,email:string,data:string,this:string
+
+# Commit the migration by running
+npx sequelize-cli db:migrate
